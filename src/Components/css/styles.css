@@ -1,6 +1,8 @@
 @import "./header.css";
 @import "./signin.css";
 @import "./login.css";
+@import "./movie.css";
+@import "./detail.css";
 
 body {
   display: flex;

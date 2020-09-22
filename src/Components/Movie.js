@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { gql } from "apollo-boost";
 import { useMutation } from "@apollo/react-hooks";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import "./css/styles.css";
 
 const LIKE_MOVIE = gql`
   mutation toggleLikeMovie($id: Int!, $isLiked: Boolean!) {
@@ -16,6 +19,7 @@ const Container = styled.div`
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-radius: 7px;
   background-color: transparent;
+  margin-bottom: 10px;
 `;
 
 const Poster = styled.div`
@@ -36,7 +40,14 @@ export default ({ id, bg, isLiked }) => {
       <Link to={`/${id}`}>
         <Poster bg={bg} />
       </Link>
-      <button onClick={toggleMovie}>{isLiked ? "Unlike" : "Like"}</button>
+      <div className="btn-util">
+        <button onClick={toggleMovie}>
+          {isLiked ? "♡" : <FontAwesomeIcon icon={faHeart} color="#ff2239" />}
+        </button>
+        <div className="book" title="영화 예매하기">
+          예매
+        </div>
+      </div>
     </Container>
   );
 };
