@@ -10,10 +10,15 @@ const GET_MOVIE = gql`
     movie(id: $id) {
       id
       title
-      runningTime
+      engTitle
+      openDate
+      director
+      genres
       rating
-      poster
+      actors
+      runningTime
       summary
+      poster
       isLiked @client
     }
   }
@@ -26,28 +31,51 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 38px;
+  font-size: 35px;
+  margin: 15px 0px;
+`;
+
+const EngTitle = styled.h2`
+  font-size: 23px;
   margin: 15px 0px;
 `;
 
 const Rating = styled.h3`
-  font-size: 25px;
+  margin-top: 230px;
+  font-size: 22px;
+`;
+
+const OpenDate = styled.h3`
+  margin-top: 100px;
+  margin-bottom: 5px;
+  font-size: 15px;
+  color: black;
 `;
 
 const Subtitle = styled.h4`
-  font-size: 25px;
+  font-size: 23px;
   margin-bottom: 10px;
 `;
 
 const Description = styled.p`
-  font-size: 20px;
+  font-size: 18px;
   color: black;
   width: 100%;
+`;
+const Director = styled.h3`
+  margin-bottom: 5px;
+  font-size: 15px;
+  color: black;
+`;
+
+const Actors = styled.h3`
+  font-size: 15px;
+  color: black;
 `;
 
 const Poster = styled.div`
   width: 260px;
-  height: 380px;
+  height: 350px;
   background-color: transparent;
   background-image: url(${(props) => props.bg});
   background-size: cover;
@@ -55,6 +83,7 @@ const Poster = styled.div`
   border-radius: 10px;
   margin-bottom: 15px;
 `;
+
 export default () => {
   const { id } = useParams();
   const { loading, data } = useQuery(GET_MOVIE, {
@@ -69,6 +98,13 @@ export default () => {
               ? "Loading..."
               : `${data.movie.title} ${data.movie.isLiked ? "💖" : " "}`}
           </Title>
+
+          {!loading && data.movie && (
+            <>
+              <EngTitle>{data.movie.engTitle}</EngTitle>
+            </>
+          )}
+
           {!loading && data.movie && (
             <>
               <Subtitle>
@@ -89,6 +125,9 @@ export default () => {
         {!loading && data.movie && (
           <>
             <Description>{data.movie.summary}</Description>
+            <OpenDate>개봉일: {data.movie.openDate}</OpenDate>
+            <Director>감독: {data.movie.director}</Director>
+            <Actors>출연진: {data.movie.actors}</Actors>
           </>
         )}
       </div>
