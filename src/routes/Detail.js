@@ -4,6 +4,8 @@ import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 import styled from "styled-components";
 import "../Components/css/styles.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUsers } from "@fortawesome/free-solid-svg-icons";
 
 const GET_MOVIE = gql`
   query getMovie($id: Int!) {
@@ -61,6 +63,7 @@ const Description = styled.p`
   font-size: 18px;
   color: black;
   width: 100%;
+  word-break: keep-all;
 `;
 const Director = styled.h3`
   margin-bottom: 5px;
@@ -82,6 +85,10 @@ const Poster = styled.div`
   background-position: center center;
   border-radius: 10px;
   margin-bottom: 15px;
+`;
+
+const CommentLabel = styled.div`
+  font-size: 17px;
 `;
 
 export default () => {
@@ -131,8 +138,22 @@ export default () => {
           </>
         )}
       </div>
-      <div className="comment">
-        <ul className="comment__list"></ul>
+      <div className="comments">
+        {!loading && data.movie && (
+          <>
+            <CommentLabel>{data.movie.title}에 대해 얘기해주세요.</CommentLabel>
+          </>
+        )}
+        <ul className="comments__list">
+          <div className="comments__column" id="comments__user">
+            <FontAwesomeIcon icon={faUsers} size="2x" className="user-icon" />
+            <div className="comments__username">유저네임</div>
+          </div>
+          <div className="comments__column">
+            <textarea rows="5" cols="100" name="comment"></textarea>
+            <div className="comments__btnSubmit">등록</div>
+          </div>
+        </ul>
       </div>
     </Container>
   );
