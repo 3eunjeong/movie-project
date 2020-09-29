@@ -31,7 +31,7 @@ const Loading = styled.div`
 const Movies = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 25px;
+  grid-gap: 40px 25px;
   width: 100%;
   position: relative;
   top: 40px;

@@ -1,48 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
-      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/styles.css" />
-    <title>Movie</title>
-  </head>
-  <body>
-    <header>
-      <ul class="header__list" id="right">
-        <ul class="header__login">
-          <a href="login.html">로그인</a>
-        </ul>
-        <ul class="header__signin">
-          <a href="signin.html">회원가입</a>
-        </ul>
-      </ul>
-      <ul class="header__list">
-        <ul class="header__movie">
-          영화
-        </ul>
-        <ul class="header__timetable">
-          상영시간표
-        </ul>
-        <ul class="header__logo">
-          <a href="index.html">로고</a>
-        </ul>
-        <ul class="header__theater">
-          극장선택
-        </ul>
-        <ul class="header__search">
-          <i class="fas fa-search"></i>
-        </ul>
-        <ul class="header__user">
-          <i class="fas fa-user"></i>
-        </ul>
-      </ul>
-    </header>
+import React from "react";
+import { HashRouter as Router, Link } from "react-router-dom";
+import "../Components/css/styles.css";
+function Login() {
+  return (
     <main>
       <form>
         <div class="form__header">
@@ -50,8 +10,8 @@
           <span class="form__reset">입력 초기화</span>
         </div>
 
-        <table>
-          <tr>
+        <table className="join_table">
+          <tr className="join_row">
             <th>
               아이디
               <img
@@ -59,9 +19,11 @@
                 alt="필수"
               />
             </th>
-            <td><input type="text" class="id" /></td>
+            <td>
+              <input type="text" class="id" />
+            </td>
           </tr>
-          <tr>
+          <tr className="join_row">
             <th>
               비밀번호
               <img
@@ -69,9 +31,11 @@
                 alt="필수"
               />
             </th>
-            <td><input type="password" class="pw1" /></td>
+            <td>
+              <input type="password" class="pw1" />
+            </td>
           </tr>
-          <tr>
+          <tr className="join_row">
             <th>
               비밀번호 확인
               <img
@@ -79,9 +43,11 @@
                 alt="필수"
               />
             </th>
-            <td><input type="password" class="pw2" /></td>
+            <td>
+              <input type="password" class="pw2" />
+            </td>
           </tr>
-          <tr>
+          <tr className="join_row">
             <th>
               이름
               <img
@@ -89,19 +55,22 @@
                 alt="필수"
               />
             </th>
-            <td><input type="text" class="name" /></td>
+            <td>
+              <input type="text" class="name" />
+            </td>
           </tr>
-          <tr>
+          <tr className="join_row">
             <th>주소</th>
             <td>
               <input type="text" id="address-post" />
-              <button class="btn-post">우편번호</button><br />
+              <button class="btn-post">우편번호</button>
+              <br />
               <input type="text" id="address-basic" /> 기본주소 <br />
               <input type="text" id="address-detail" /> 나머지주소
               (선택입력가능)
             </td>
           </tr>
-          <tr>
+          <tr className="join_row">
             <th>
               휴대전화
               <img
@@ -124,7 +93,7 @@
               <input type="text" class="phone" id="phone-last" />
             </td>
           </tr>
-          <tr>
+          <tr className="join_row">
             <th>
               이메일
               <img
@@ -132,14 +101,20 @@
                 alt="필수"
               />
             </th>
-            <td><input type="text" id="email" /></td>
+            <td>
+              <input type="text" id="email" />
+            </td>
           </tr>
         </table>
         <div class="form__footer">
-          <button class="form__submit">회원가입</button>
+          <button class="form__submit">
+            <Router>
+              <Link to="/">회원가입</Link>
+            </Router>
+          </button>
         </div>
       </form>
     </main>
-    <script></script>
-  </body>
-</html>
+  );
+}
+export default Login;

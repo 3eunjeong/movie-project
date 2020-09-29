@@ -3,53 +3,71 @@ main {
   flex-direction: column;
 }
 
+.main__title {
+  margin-top: 20px;
+}
+
+h1 {
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
 .main__content {
-  margin: 20px 0px;
+  margin: 60px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-input {
+.login__id,
+.login__pw {
   padding: 15px 0px;
   width: 300px;
   margin: 5px 0px;
   border: 1px solid #e3e3e3;
-}
-
-.main__button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  border-radius: 10px;
 }
 
 .login__btnLogin {
   width: 300px;
   padding: 15px 50px;
-  margin-top: 100px;
+  margin-top: 60px;
   background-color: black;
   color: white;
   border: 0;
   outline: 0;
   text-decoration: none;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .login__btnLogin:hover {
   opacity: 0.7;
 }
 
-.login__btnSign {
-  width: 300px;
-  padding: 15px 50px;
-  margin: 10px 0px;
-  background-color: white;
-  color: black;
-  border: 1px solid #e3e3e3;
-  outline: 0;
-  cursor: pointer;
+.find_info {
+  display: flex;
+  justify-content: center;
 }
 
-.login__btnSign:hover {
-  opacity: 0.7;
+.find_info a {
+  font-size: 14px;
+  line-height: 14px;
+  display: inline-block;
+  text-decoration: none;
+  color: #8e8e8e;
+}
+
+.find_info .bar {
+  margin: 0 3px;
+}
+
+.bar {
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  text-indent: -999em;
+  background: #e4e4e5;
+  vertical-align: bottom;
 }

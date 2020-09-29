@@ -38,11 +38,11 @@ export default ({ id, bg, isLiked }) => {
   });
   return (
     <Container>
-      <Link to={`/${id}`}>
+      <Link to={`/movie/${id}`}>
         <Poster bg={bg} />
       </Link>
       <div className="btn-util">
-        <button onClick={toggleMovie}>
+        <button onClick={toggleMovie} className="movie__btnLike">
           {isLiked ? (
             <FontAwesomeIcon icon={faHeartSolid} color="#ff2239" />
           ) : (

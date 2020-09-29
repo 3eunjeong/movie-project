@@ -1,7 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Link, Route } from "react-router-dom";
-import Home from "../routes/Home";
-import Login from "../routes/Login";
+import { HashRouter as Router, Link } from "react-router-dom";
 import "./css/styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -17,7 +15,9 @@ function Header() {
             </Router>
           </li>
           <li className="header__signin">
-            <a href="signin.html">회원가입</a>
+            <Router>
+              <Link to="/join">회원가입</Link>
+            </Router>
           </li>
         </ul>
         <ul className="header__list">

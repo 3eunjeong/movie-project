@@ -1,0 +1,20 @@
+.select {
+  display: flex;
+  justify-content: space-evenly;
+  border: 2px solid #ebebeb;
+  height: 600px;
+}
+
+.select__option {
+  width: 330px;
+  padding: 13px;
+}
+
+.select__option:nth-child(2) {
+  border-left: 2px solid #ebebeb;
+  border-right: 2px solid #ebebeb;
+}
+
+.select__movieTitle {
+  margin-top: 8px;
+}

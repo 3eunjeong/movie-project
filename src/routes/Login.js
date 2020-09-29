@@ -1,15 +1,12 @@
 import React from "react";
-import { HashRouter as Router, Link, Route } from "react-router-dom";
-import Home from "./Home";
+import { HashRouter as Router, Link } from "react-router-dom";
 import "../Components/css/styles.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faSearch } from "@fortawesome/free-solid-svg-icons";
 function Login() {
   return (
     <div>
       <main>
         <div class="main__title">
-          <h3>LOGIN</h3>
+          <h1>LOGIN</h1>
           <p>로그인 하시면 다양하고 특별한 혜택을 이용할 수 있습니다.</p>
         </div>
         <div class="main__content">
@@ -21,14 +18,31 @@ function Login() {
               아이디 저장
             </label>
           </div>
+          <button class="login__btnLogin" title="로그인하기">
+            <Router>
+              <Link to="/">로그인</Link>
+            </Router>
+          </button>
         </div>
-        <div class="main__button">
-          <button class="login__btnLogin">
-            <a href="index.html">로그인</a>
-          </button>
-          <button class="login__btnSign">
-            <a href="signin.html">회원가입</a>
-          </button>
+
+        <div class="find_info">
+          <a target="_blank" id="idInquery">
+            아이디 찾기
+          </a>
+          <span class="bar" aria-hidden="true">
+            |
+          </span>
+          <a target="_blank" id="pwInquery">
+            비밀번호 찾기
+          </a>
+          <span class="bar" aria-hidden="true">
+            |
+          </span>
+          <a target="_blank" id="join">
+            <Router>
+              <Link to="/join">회원가입</Link>
+            </Router>
+          </a>
         </div>
       </main>
       <footer></footer>

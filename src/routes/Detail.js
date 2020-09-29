@@ -116,7 +116,9 @@ export default () => {
         <div className="column">
           <Poster bg={data?.movie?.poster}></Poster>
           <div className="book" title="영화 예매하기" id="detail__book">
-            예매
+            <Router>
+              <Link to="/book">예매</Link>
+            </Router>
           </div>
         </div>
       </div>

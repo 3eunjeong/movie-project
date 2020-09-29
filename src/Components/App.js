@@ -1,17 +1,21 @@
 import React from "react";
-import { HashRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "../routes/Home";
 import Detail from "../routes/Detail";
 import Login from "../routes/Login";
 import Book from "../routes/Book";
+import Join from "../routes/Join";
 
 function App() {
   return (
     <Router>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/book" component={Book} />
-      <Route exact path="/:id" component={Detail} />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/movie/:id" component={Detail} />
+        <Route path="/login" component={Login} />
+        <Route path="/book" component={Book} />
+        <Route path="/join" component={Join} />
+      </Switch>
     </Router>
   );
 }
