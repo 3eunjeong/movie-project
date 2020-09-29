@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { HashRouter as Router, Link } from "react-router-dom";
 import styled from "styled-components";
 import { gql } from "apollo-boost";
 import { useMutation } from "@apollo/react-hooks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons";
+import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons";
 import "./css/styles.css";
 
 const LIKE_MOVIE = gql`
@@ -42,10 +43,16 @@ export default ({ id, bg, isLiked }) => {
       </Link>
       <div className="btn-util">
         <button onClick={toggleMovie}>
-          {isLiked ? "♡" : <FontAwesomeIcon icon={faHeart} color="#ff2239" />}
+          {isLiked ? (
+            <FontAwesomeIcon icon={faHeartSolid} color="#ff2239" />
+          ) : (
+            <FontAwesomeIcon icon={faHeartRegular} color="#ff2239" />
+          )}
         </button>
         <div className="book" title="영화 예매하기">
-          예매
+          <Router>
+            <Link to="/book">예매</Link>
+          </Router>
         </div>
       </div>
     </Container>

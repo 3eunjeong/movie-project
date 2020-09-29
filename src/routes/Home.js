@@ -42,13 +42,11 @@ export default () => {
   return (
     <Container>
       {loading && <Loading>Loading...</Loading>}
-      {!loading && data.movies && (
-        <Movies>
-          {data.movies.map((m) => (
-            <Movie key={m.id} id={m.id} isLiked={m.isLiked} bg={m.poster} />
-          ))}
-        </Movies>
-      )}
+      <Movies>
+        {data?.movies?.map((m) => (
+          <Movie key={m.id} id={m.id} isLiked={m.isLiked} bg={m.poster} />
+        ))}
+      </Movies>
     </Container>
   );
 };

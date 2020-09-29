@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { HashRouter as Router, Link, useParams } from "react-router-dom";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 import styled from "styled-components";
@@ -106,44 +106,29 @@ export default () => {
               : `${data.movie.title} ${data.movie.isLiked ? "💖" : " "}`}
           </Title>
 
-          {!loading && data.movie && (
-            <>
-              <EngTitle>{data.movie.engTitle}</EngTitle>
-            </>
-          )}
+          <EngTitle>{data?.movie?.engTitle}</EngTitle>
 
-          {!loading && data.movie && (
-            <>
-              <Subtitle>
-                {data.movie.runningTime}분 · {data.movie.genres}
-              </Subtitle>
-              <Rating>{data.movie.rating}</Rating>
-            </>
-          )}
+          <Subtitle>
+            {data?.movie?.runningTime}분 · {data?.movie?.genres}
+          </Subtitle>
+          <Rating>{data?.movie?.rating}</Rating>
         </div>
         <div className="column">
-          <Poster bg={data && data.movie ? data.movie.poster : ""}></Poster>
+          <Poster bg={data?.movie?.poster}></Poster>
           <div className="book" title="영화 예매하기" id="detail__book">
             예매
           </div>
         </div>
       </div>
       <div className="movie-info">
-        {!loading && data.movie && (
-          <>
-            <Description>{data.movie.summary}</Description>
-            <OpenDate>개봉일: {data.movie.openDate}</OpenDate>
-            <Director>감독: {data.movie.director}</Director>
-            <Actors>출연진: {data.movie.actors}</Actors>
-          </>
-        )}
+        <Description>{data?.movie?.summary}</Description>
+        <OpenDate>개봉일: {data?.movie?.openDate}</OpenDate>
+        <Director>감독: {data?.movie?.director}</Director>
+        <Actors>출연진: {data?.movie?.actors}</Actors>
       </div>
       <div className="comments">
-        {!loading && data.movie && (
-          <>
-            <CommentLabel>{data.movie.title}에 대해 얘기해주세요.</CommentLabel>
-          </>
-        )}
+        <CommentLabel>{data?.movie?.title}에 대해 얘기해주세요.</CommentLabel>
+
         <ul className="comments__list">
           <div className="comments__column" id="comments__user">
             <FontAwesomeIcon icon={faUsers} size="2x" className="user-icon" />
