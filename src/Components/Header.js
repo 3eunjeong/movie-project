@@ -24,7 +24,9 @@ function Header() {
           <li className="header__movie">영화</li>
           <li className="header__timetable">상영시간표</li>
           <li className="header__logo">
-            <a href="index.html">로고</a>
+            <Router>
+              <Link to="/">로고</Link>
+            </Router>
           </li>
           <li className="header__theater">극장선택</li>
           <li className="header__search">
