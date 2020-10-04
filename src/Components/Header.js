@@ -22,7 +22,11 @@ function Header() {
         </ul>
         <ul className="header__list">
           <li className="header__movie">영화</li>
-          <li className="header__timetable">상영시간표</li>
+          <li className="header__timetable">
+            <Router>
+              <Link to="/book">예매</Link>
+            </Router>
+          </li>
           <li className="header__logo">
             <Router>
               <Link to="/">로고</Link>

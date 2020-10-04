@@ -4,6 +4,7 @@
 @import "./movie.css";
 @import "./detail.css";
 @import "./book.css";
+@import "./seat.css";
 
 body {
   display: flex;
@@ -15,4 +16,8 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
 }

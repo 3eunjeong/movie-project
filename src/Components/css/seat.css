@@ -1,0 +1,97 @@
+.seat-main {
+  display: flex;
+  flex-direction: row;
+}
+
+.seat_select {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #ebebeb;
+  width: 68%;
+  height: 700px;
+  padding: 13px;
+}
+
+.seatTitle {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.seat-count {
+  display: flex;
+}
+
+.seatCount__column {
+  display: flex;
+  align-items: center;
+  margin: 13px 20px;
+}
+
+.txt {
+  margin-right: 5px;
+}
+
+.seat__btnCount {
+  display: flex;
+}
+
+.btnDown,
+.btnUp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #ccc;
+  font-size: 1.2em;
+}
+
+.btnDown {
+  border-top-left-radius: 13px;
+  border-bottom-left-radius: 13px;
+}
+
+.btnUp {
+  border-top-right-radius: 13px;
+  border-bottom-right-radius: 13px;
+}
+
+.seat-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 24px;
+  border: 1px solid #ccc;
+  font-size: 1.2em;
+  background-color: #efefef;
+}
+
+.seatLayout {
+  /* width: 67%; */
+  width: 92%;
+  height: 600px;
+  background-color: black;
+}
+
+.seat-result {
+  margin-left: 15px;
+  width: 32%;
+  height: 700px;
+  background-color: teal;
+  border-radius: 13px;
+}
+
+.select-phase {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.btn-arrowLeft {
+  padding: 10px 20px;
+  border-radius: 15px;
+  border: none;
+  background-color: #9147ff;
+  color: white;
+}
