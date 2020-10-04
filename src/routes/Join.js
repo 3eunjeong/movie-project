@@ -15,6 +15,7 @@ function Login() {
             <th>
               아이디
               <img
+                className="required-icon"
                 src="https://img.echosting.cafe24.com/skin/base/common/ico_required.gif"
                 alt="필수"
               />
@@ -27,6 +28,7 @@ function Login() {
             <th>
               비밀번호
               <img
+                className="required-icon"
                 src="https://img.echosting.cafe24.com/skin/base/common/ico_required.gif"
                 alt="필수"
               />
@@ -39,6 +41,7 @@ function Login() {
             <th>
               비밀번호 확인
               <img
+                className="required-icon"
                 src="https://img.echosting.cafe24.com/skin/base/common/ico_required.gif"
                 alt="필수"
               />
@@ -51,6 +54,7 @@ function Login() {
             <th>
               이름
               <img
+                className="required-icon"
                 src="https://img.echosting.cafe24.com/skin/base/common/ico_required.gif"
                 alt="필수"
               />
@@ -74,12 +78,13 @@ function Login() {
             <th>
               휴대전화
               <img
+                className="required-icon"
                 src="https://img.echosting.cafe24.com/skin/base/common/ico_required.gif"
                 alt="필수"
               />
             </th>
             <td>
-              <select>
+              <select class="phone-number">
                 <option>010</option>
                 <option>011</option>
                 <option>016</option>
@@ -97,6 +102,7 @@ function Login() {
             <th>
               이메일
               <img
+                className="required-icon"
                 src="https://img.echosting.cafe24.com/skin/base/common/ico_required.gif"
                 alt="필수"
               />

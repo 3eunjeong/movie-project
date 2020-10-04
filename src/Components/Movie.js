@@ -49,7 +49,7 @@ export default ({ id, bg, isLiked }) => {
             <FontAwesomeIcon icon={faHeartRegular} color="#ff2239" />
           )}
         </button>
-        <div className="book" title="영화 예매하기">
+        <div className="movie__btnBook" title="영화 예매하기">
           <Router>
             <Link to="/book">예매</Link>
           </Router>

@@ -38,6 +38,7 @@ form {
 }
 
 th {
+  font-size: 16px;
   text-align: left;
   border-right: 1px solid #ebebeb;
   border-bottom: 1px solid #ebebeb;
@@ -62,11 +63,20 @@ input {
   width: 200px;
 }
 
+.join_row:nth-child(5) {
+  font-size: 14px;
+}
+
 .btn-post {
   background-color: white;
   color: #020202;
   border: 1px solid #e3e3e3;
   outline: 0;
+  margin-left: 5px;
+}
+
+#address-basic {
+  margin: 5px 0px;
 }
 
 .form__footer {
@@ -86,4 +96,8 @@ input {
 
 .form__submit:hover {
   opacity: 0.7;
+}
+
+.required-icon {
+  margin-left: 5px;
 }

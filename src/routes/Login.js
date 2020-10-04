@@ -12,13 +12,15 @@ function Login() {
         <div class="main__content">
           <input type="text" class="login__id" placeholder="  아이디" />
           <input type="password" class="login__pw" placeholder="  비밀번호" />
-          <div class="login__id-save">
-            <label>
-              <input type="checkbox" value="id-save" class="login__checkbox" />{" "}
-              아이디 저장
-            </label>
-          </div>
-          <button class="login__btnLogin" title="로그인하기">
+          <form class="login__id-save">
+            <input type="checkbox" value="id-save" class="login__checkbox" />
+            아이디 저장
+          </form>
+          <button
+            class="login__btnLogin"
+            title="로그인하기"
+            onClick={() => alert("로그인 되었습니다.")}
+          >
             <Router>
               <Link to="/">로그인</Link>
             </Router>
