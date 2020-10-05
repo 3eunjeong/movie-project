@@ -21,7 +21,11 @@ function Header() {
           </li>
         </ul>
         <ul className="header__list">
-          <li className="header__movie">영화</li>
+          <li className="header__movie">
+            <Router>
+              <Link to="/movie">영화</Link>
+            </Router>
+          </li>
           <li className="header__timetable">
             <Router>
               <Link to="/book">예매</Link>

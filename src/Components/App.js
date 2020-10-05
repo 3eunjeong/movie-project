@@ -6,12 +6,14 @@ import Login from "../routes/Login";
 import Book from "../routes/Book";
 import Join from "../routes/Join";
 import Seat from "../routes/Seat";
+import Movies from "../routes/Movies";
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/movie" component={Movies} />
         <Route path="/movie/:id" component={Detail} />
         <Route path="/login" component={Login} />
         <Route exact path="/book" component={Book} />

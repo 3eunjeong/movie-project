@@ -47,7 +47,6 @@ function Login() {
           </a>
         </div>
       </main>
-      <footer></footer>
     </div>
   );
 }

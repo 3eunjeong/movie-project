@@ -15,7 +15,7 @@ const LIKE_MOVIE = gql`
 `;
 
 const Container = styled.div`
-  height: 400px;
+  height: 470px;
   width: 100%;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-radius: 7px;
