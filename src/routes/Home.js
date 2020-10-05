@@ -1,8 +1,11 @@
 import React from "react";
+import Slider from "react-slick";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 import styled from "styled-components";
 import Movie from "../Components/Movie";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const GET_MOVIES = gql`
   {
@@ -14,13 +17,6 @@ const GET_MOVIES = gql`
   }
 `;
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-`;
-
 const Loading = styled.div`
   font-size: 18px;
   opacity: 0.5;
@@ -28,25 +24,71 @@ const Loading = styled.div`
   margin-top: 10px;
 `;
 
-const Movies = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 40px 25px;
+const Wrap = styled.div`
+  margin: 3% 0;
   width: 100%;
-  position: relative;
-  top: 40px;
+  .slick-prev:before {
+    opaicty: 1;
+    color: black;
+    left: 0;
+  }
+  .slick-next:before {
+    opacity: 1;
+    color: black;
+  }
+`;
+
+const Contents = styled.div`
+  height: 10%;
 `;
 
 export default () => {
   const { loading, data } = useQuery(GET_MOVIES);
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 5,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
-    <Container>
+    <Wrap>
       {loading && <Loading>Loading...</Loading>}
-      <Movies>
+      <Slider {...settings}>
         {data?.movies?.map((m) => (
-          <Movie key={m.id} id={m.id} isLiked={m.isLiked} bg={m.poster} />
+          <Contents>
+            <Movie key={m.id} id={m.id} isLiked={m.isLiked} bg={m.poster} />
+          </Contents>
         ))}
-      </Movies>
-    </Container>
+      </Slider>
+    </Wrap>
   );
 };
