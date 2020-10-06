@@ -81,7 +81,7 @@ export default () => {
         <div className="select__option" id="time">
           <span className="select__optionLabel">날짜 / 시간</span>
           <DatePicker
-            className="DatePicker"
+            className="datePicker"
             selected={startDate}
             onChange={(date) => setStartDate(date)}
             dateFormat="yyyy.MM.dd (eee)"
@@ -91,7 +91,7 @@ export default () => {
             isClearable
           />
           <DatePicker
-            className="TimePicker"
+            className="timePicker"
             selected={startDate}
             onChange={(date) => setStartDate(date)}
             showTimeSelect
