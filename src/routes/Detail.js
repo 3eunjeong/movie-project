@@ -1,4 +1,6 @@
 import React from "react";
+import Rating from "@material-ui/lab/Rating";
+import { makeStyles } from "@material-ui/core/styles";
 import { HashRouter as Router, Link, useParams } from "react-router-dom";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
@@ -42,9 +44,10 @@ const EngTitle = styled.h2`
   margin: 15px 0px;
 `;
 
-const Rating = styled.h3`
+const Rates = styled.h3`
   margin-top: 230px;
   font-size: 22px;
+  display: flex;
 `;
 
 const OpenDate = styled.h3`
@@ -91,11 +94,23 @@ const CommentLabel = styled.div`
   font-size: 17px;
 `;
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+    flexDirection: "column",
+    "& > * + *": {
+      marginTop: theme.spacing(1),
+    },
+  },
+}));
+
 export default () => {
   const { id } = useParams();
   const { loading, data } = useQuery(GET_MOVIE, {
     variables: { id: parseInt(id) },
   });
+  const classes = useStyles();
+
   return (
     <Container>
       <div className="movie-detail">
@@ -111,7 +126,18 @@ export default () => {
           <Subtitle>
             {data?.movie?.runningTime}분 · {data?.movie?.genres}
           </Subtitle>
-          <Rating>{data?.movie?.rating}</Rating>
+          <Rates>
+            <div className={classes.root}>
+              <Rating
+                name="customized-10"
+                value={`${data?.movie?.rating}`}
+                precision={0.1}
+                max={10}
+                readOnly
+              />
+            </div>
+            {data?.movie?.rating.toPrecision(2)}
+          </Rates>
         </div>
         <div className="column">
           <Poster bg={data?.movie?.poster}></Poster>
