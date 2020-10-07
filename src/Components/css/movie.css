@@ -1,7 +1,7 @@
 .btn-util {
   display: flex;
   justify-content: space-between;
-  margin-top: 5px;
+  margin: 10px 0;
 }
 
 .movie__btnLike {
@@ -25,4 +25,12 @@
   color: white;
   text-align: center;
   padding: 5px;
+}
+
+.slick-list {
+  height: 10%;
+}
+
+.slick-active {
+  padding: 0 10px;
 }
