@@ -28,6 +28,18 @@ export default () => {
     variables: { id: parseInt(id) },
   });
   const [startDate, setStartDate] = useState(new Date());
+  const [province, setProvince] = useState("== 시/도 선택 ==");
+  const [theater, setTheater] = useState("== 영화관 선택 ==");
+
+  const onChangeProvince = (e) => {
+    setProvince(e.target.value);
+    console.log(e.target.value);
+  };
+
+  const onChangeTheater = (e) => {
+    setTheater(e.target.value);
+    console.log(e.target.value);
+  };
 
   return (
     <div>
@@ -51,8 +63,7 @@ export default () => {
 
           <div className="select__form">
             <form className="select__province">
-              <select>
-                <option value="none">== 시/도 선택 ==</option>
+              <select value={province} onChange={onChangeProvince}>
                 <option value="seoul">서울</option>
                 <option value="gyeonggi">경기</option>
                 <option value="incheon">인천</option>
@@ -64,15 +75,14 @@ export default () => {
               </select>
             </form>
             <form className="select__theater">
-              <select>
-                <option value="none">== 영화관 선택 ==</option>
-                <option value="seoul">서울영화관</option>
-                <option value="gyeonggi">경기영화관</option>
-                <option value="incheon">인천영화관</option>
-                <option value="daejeon">대전영화관</option>
-                <option value="busan">부산영화관</option>
-                <option value="gwangju">광주영화관</option>
-                <option value="gangwon">강원영화관</option>
+              <select value={theater} onChange={onChangeTheater}>
+                <option value="seoul theater">서울영화관</option>
+                <option value="gyeonggi theater">경기영화관</option>
+                <option value="incheon theater">인천영화관</option>
+                <option value="daejeon theater">대전영화관</option>
+                <option value="busan theater">부산영화관</option>
+                <option value="gwangju theater">광주영화관</option>
+                <option value="gangwon theater">강원영화관</option>
                 <option value="jeju">제주영화관</option>
               </select>
             </form>
@@ -102,6 +112,7 @@ export default () => {
             maxTime={setHours(setMinutes(new Date(), 30), 20)}
             dateFormat="h:mm aa"
             placeholderText="시간을 선택하세요"
+            isClearable
           />
         </div>
       </div>
