@@ -164,6 +164,8 @@ export default () => {
           </div>
           <div className="comments__column">
             <textarea rows="5" cols="100" name="comment"></textarea>
+          </div>
+          <div className="comments__column">
             <div className="comments__btnSubmit">등록</div>
           </div>
         </ul>

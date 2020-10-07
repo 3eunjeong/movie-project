@@ -69,6 +69,11 @@
   background-color: #efefef;
 }
 
+.seat-availableNum {
+  font-weight: 600;
+  color: #2b71fc;
+}
+
 /* 좌석 선택하기 */
 
 .seatLayout {
@@ -88,9 +93,21 @@
   border-bottom: 2px solid #efefef;
 }
 
+.seat-picker {
+  margin: 0 auto;
+}
+
 .seat-content {
   width: 400px;
-  border: 2px solid yellow;
+}
+
+.seat {
+  width: 50px;
+  height: 50px;
+}
+
+.seat__number {
+  font-size: 20px;
 }
 
 /* 예약 결과 보여주기 */
