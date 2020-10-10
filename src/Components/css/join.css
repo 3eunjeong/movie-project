@@ -29,6 +29,7 @@ form {
 
 .form__reset {
   font-size: 12px;
+  cursor: pointer;
 }
 
 .join_table {
@@ -73,6 +74,7 @@ input {
   border: 1px solid #e3e3e3;
   outline: 0;
   margin-left: 5px;
+  cursor: pointer;
 }
 
 #address-basic {

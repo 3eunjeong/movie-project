@@ -5,6 +5,7 @@
 @import "./detail.css";
 @import "./book.css";
 @import "./seat.css";
+@import "./addressModal.css";
 
 body {
   display: flex;
