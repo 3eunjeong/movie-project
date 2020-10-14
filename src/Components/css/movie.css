@@ -17,6 +17,10 @@
   cursor: pointer;
 }
 
+.movie__btnLike:hover {
+  size: 50px;
+}
+
 .movie__btnBook {
   cursor: pointer;
   width: 130px;
@@ -27,8 +31,12 @@
   padding: 5px;
 }
 
+.movie__btnBook:hover {
+  background: linear-gradient(to bottom right, #8432fc, 60%, #cea0fa);
+}
+
 .slick-list {
-  height: 10%;
+  height: 525px;
 }
 
 .slick-active {

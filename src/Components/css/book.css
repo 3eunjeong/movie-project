@@ -27,13 +27,29 @@
   font-weight: 600;
 }
 
+.select__movieTitleDefault {
+  margin-top: 8px;
+  padding: 5px 0;
+  background-color: white;
+  cursor: pointer;
+}
+
+.select__movieTitleDefault:hover {
+  background-color: #f3f3f3;
+}
+
+.select__movieTitleClicked {
+  margin-top: 8px;
+  padding: 5px 0;
+  background-color: #6714e3;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
 .select__movieTitle {
   margin-top: 8px;
   padding: 5px 0;
-}
-
-.select__movieTitle:hover {
-  background-color: #f3f3f3;
 }
 
 .select__form {
@@ -64,4 +80,8 @@
   color: white;
   border: none;
   border-radius: 15px;
+}
+
+.btn-select:hover {
+  background: linear-gradient(to bottom right, #8432fc, 60%, #cea0fa);
 }

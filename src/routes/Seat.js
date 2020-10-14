@@ -25,7 +25,7 @@ export default () => {
   const [teenNum, setTeenNum] = useState(0);
   const [specialNum, setSpecialNum] = useState(0);
   const availableNum = adultNum + teenNum + specialNum;
-  const [selected, setSelected] = React.useState(null);
+  const [selected, setSelected] = useState(null);
 
   return (
     <div>

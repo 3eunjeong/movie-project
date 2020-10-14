@@ -6,6 +6,7 @@
 @import "./book.css";
 @import "./seat.css";
 @import "./addressModal.css";
+@import "./board.css";
 
 body {
   display: flex;

@@ -7,6 +7,7 @@ import Book from "../routes/Book";
 import Join from "../routes/Join";
 import Seat from "../routes/Seat";
 import Movies from "../routes/Movies";
+import Board from "../routes/Board";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/book" component={Book} />
         <Route path="/book/seat" component={Seat} />
         <Route path="/join" component={Join} />
+        <Route path="/board" component={Board} />
       </Switch>
     </Router>
   );

@@ -3,9 +3,6 @@ import ReactDOM from "react-dom";
 import DaumPostCode from "react-daum-postcode";
 import "./css/styles.css";
 
-// const [zoneCode, setZoneCode] = useState("");
-// const [fullAddress, setFullAddress] = useState("");
-
 const handleAddress = (data) => {
   let allAddress = data.address;
   let extraAddress = "";
@@ -23,8 +20,7 @@ const handleAddress = (data) => {
   }
 
   console.log(allAddress); // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
-  // setZoneCode(zoneCodes);
-  // setFullAddress(allAddress);
+  console.log(zoneCodes);
 };
 
 const AddressModal = ({ isShowing, hide }) =>

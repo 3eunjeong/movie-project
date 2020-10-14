@@ -36,7 +36,11 @@ function Header() {
               <Link to="/">로고</Link>
             </Router>
           </li>
-          <li className="header__theater">게시판</li>
+          <li className="header__theater">
+            <Router>
+              <Link to="/board">게시판</Link>
+            </Router>
+          </li>
           <li className="header__search">
             <FontAwesomeIcon icon={faSearch} />
           </li>

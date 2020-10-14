@@ -30,6 +30,7 @@ export default () => {
   const [startDate, setStartDate] = useState(new Date());
   const [province, setProvince] = useState("== 시/도 선택 ==");
   const [theater, setTheater] = useState("== 영화관 선택 ==");
+  const [select__movieTitle, setTitleBg] = useState(id);
 
   const onChangeProvince = (e) => {
     setProvince(e.target.value);
@@ -41,6 +42,16 @@ export default () => {
     console.log(e.target.value);
   };
 
+  const onChangeTitleBg = (e, id) => {
+    e.preventDefault();
+    if (id === select__movieTitle) {
+      setTitleBg("");
+    } else {
+      setTitleBg(id);
+      console.log(id);
+    }
+  };
+
   return (
     <div>
       <h1 className="bookTitle">영화예매</h1>
@@ -50,8 +61,12 @@ export default () => {
           <MovieList>
             {data?.movies?.map((m) => (
               <h3
-                className="select__movieTitle"
-                onClick={() => console.log(m.title)}
+                className={
+                  select__movieTitle === m.id
+                    ? "select__movieTitleClicked"
+                    : "select__movieTitleDefault"
+                }
+                onClick={(e) => onChangeTitleBg(e, m.id)}
               >
                 {m.title}
               </h3>
