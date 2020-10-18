@@ -6,6 +6,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import MovieSeatPicker from "../Components/MovieSeatPicker";
+import Book from "./Book";
+import { propTypes } from "react-seat-picker";
 
 const GET_MOVIE = gql`
   query getMovie($id: Int!) {
@@ -110,11 +112,17 @@ export default () => {
           <div className="seatLayout">
             <h2 className="seat__title">SCREEN</h2>
             <div className="seat__layout">
-              <MovieSeatPicker setSelected={setSelected} />
+              <MovieSeatPicker
+                setSelected={setSelected}
+                maxSeats={availableNum}
+              />
             </div>
           </div>
         </section>
-        <div className="seat-result"></div>
+        <div className="seat-result">
+          영화 예매 결과
+          <Book />
+        </div>
       </main>
       <div className="select-phase">
         <button className="btn-arrowLeft" title="이전 단계로 넘어가기">

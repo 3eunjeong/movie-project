@@ -1,10 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { HashRouter as Router, Link } from "react-router-dom";
 import AddressModal from "../Components/AddressModal";
 import useModal from "../Components/useModal";
 import "../Components/css/styles.css";
 
 function Join() {
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    fetch('/api/registor/members')
+    .then(response => response.text())
+    .then(message => {
+    setMessage(message);
+    });
+    },[])
+
   const { isShowing, toggle } = useModal();
   const [joinInfo, setJoinInfo] = useState({
     id: "",
@@ -250,6 +260,12 @@ function Join() {
           </button>
         </div>
       </form>
+
+      <h1 className="App-title">{message}</h1>
+
+<p className="App-intro">
+To get started, edit <code>src/Join.js</code> and save to reload.
+</p>
     </main>
   );
 }

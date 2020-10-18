@@ -22,7 +22,7 @@ const MovieList = styled.div`
   color: black;
 `;
 
-export default () => {
+export default (props) => {
   const { id } = useParams();
   const { data } = useQuery(GET_MOVIE_INFO, {
     variables: { id: parseInt(id) },
